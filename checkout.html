@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout – ELENORM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">ELENORM</div>
+</header>
+
+<div class="container">
+    <h2>Checkout</h2>
+
+    <form onsubmit="checkout(); return false;">
+        <label>Name</label><br>
+        <input type="text" required><br><br>
+
+        <label>Phone</label><br>
+        <input type="text" required><br><br>
+
+        <label>Address</label><br>
+        <textarea required></textarea><br><br>
+
+        <button class="btn" type="submit">PLACE ORDER</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
