@@ -1,64 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    ELENORM – Homepage
+    -------------------
+    This is the main landing page for your T‑shirt brand.
+
+    HOW TO EDIT SAFELY:
+    - You can edit any TEXT between tags (like <p> ... </p>) without breaking layout.
+    - You can replace IMAGE sources (src="...") with your own mockup files.
+    - Do NOT remove data attributes like data-product-id unless you also edit script.js.
+    - Comments like this do not affect the page; they are only here to guide you.
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELENORM – Wear Your Voice</title>
+
+  <!-- Global stylesheet shared by all pages -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
+    <!-- =========================================================
+         HEADER
+         - Shows brand name and cart icon.
+         - The span with data-cart-count is updated by script.js.
+       ========================================================= -->
     <header>
-      <div class="logo">ELENORM</div>
+      <!-- Clicking the logo brings user back to home -->
+      <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+        ELENORM
+      </div>
+
       <div class="nav-icons">
-        <button class="nav-icon" onclick="location.href='cart.html'">
-          🛒 <span data-cart-count style="font-size:11px;margin-left:2px;">0</span>
+        <!-- Cart button: leads to cart.html -->
+        <button class="nav-icon" onclick="location.href='cart.html'" aria-label="Go to cart">
+          🛒
+          <!-- Current cart item count (controlled by JS) -->
+          <span data-cart-count style="font-size:11px;margin-left:3px;">0</span>
         </button>
       </div>
     </header>
 
+    <!-- =========================================================
+         MAIN CONTENT
+       ========================================================= -->
     <main>
-      <!-- Hero -->
+
+      <!-- =======================================================
+           HERO SECTION
+           - Big statement at top of page.
+           - Left: text and buttons.
+           - Right: featured product card with image.
+         ======================================================= -->
       <section class="hero">
+        <!-- LEFT SIDE: Copy + CTAs -->
         <div>
+          <!-- Small badge above heading -->
           <div class="hero-copy-eyebrow">
             <span class="hero-pill-dot">%</span>
             <span>5% donated drops</span>
           </div>
+
+          <!-- Main headline -->
           <h1 class="hero-title">Wear your voice.</h1>
+
+          <!-- Subheadline: you can change text freely -->
           <p class="hero-subtitle">
             Premium 220+ GSM graphic tees made in Bangladesh, designed to stand
-            with the causes and stories that matter.
+            with movements, fandoms, and stories that actually mean something.
           </p>
+
+          <!-- Primary call-to-action row -->
           <div class="hero-cta-row">
+            <!-- data-scroll attribute is used by script.js for smooth scroll -->
             <button class="btn-primary" data-scroll="new-in">
               <span>Shop new drops</span> →
             </button>
-            <div class="hero-cta-secondary">
-              or <a href="#custom" style="text-decoration: underline">design your own</a>
-            </div>
+
+            <p class="hero-cta-secondary">
+              or
+              <!-- This simply jumps to the custom section below -->
+              <a href="#custom" style="text-decoration:underline;">design your own</a>
+            </p>
           </div>
+
+          <!-- Quick feature pills under hero -->
           <div class="hero-tag-row">
             <div class="pill">
-              <span class="pill-dot"></span> 220+ GSM premium cotton
+              <span class="pill-dot"></span>
+              220+ GSM premium cotton
             </div>
-            <div class="pill">Nationwide delivery across Bangladesh</div>
-            <div class="pill">Made to order, less waste</div>
+            <div class="pill">
+              Nationwide delivery across Bangladesh
+            </div>
+            <div class="pill">
+              Made‑to‑order, less waste
+            </div>
           </div>
         </div>
 
+        <!-- RIGHT SIDE: Featured drop card -->
         <div class="hero-visual-wrapper">
           <div class="hero-card">
             <div class="hero-card-header">
               <span>Featured drop</span>
               <span class="hero-card-tag">Free Palestine tee</span>
             </div>
+
             <div class="hero-tshirt">
               <div class="hero-tshirt-main">
+                <!--
+                  HERO IMAGE
+                  ----------
+                  Replace this placeholder box with an actual <img> tag.
+
+                  STEP 1: Put your mockup file in an "images" folder inside repo, e.g.:
+                          /images/free-palestine-hero.png
+
+                  STEP 2: Replace the entire <div> below with:
+
+                    <img
+                      src="images/free-palestine-hero.png"
+                      alt="FREE PALESTINE – Drop Shoulder T‑shirt mockup front view"
+                      style="width:78%;height:auto;border-radius:14px;border:1px solid rgba(148,163,184,0.6);"
+                    />
+
+                 -->
                 <div class="hero-tshirt-illustration">
-                  FREE PALESTINE – Drop Shoulder Collection<br />
-                  (replace with product image later)
+                  HERO MOCKUP<br />
+                  (TODO: replace with your real Free Palestine T‑shirt image)
                 </div>
+
+                <!-- Little “flag bar” label at bottom of card -->
                 <div class="hero-flag-bar">
                   <div class="flag-swatches">
                     <span></span><span></span><span></span>
@@ -67,11 +141,13 @@
                 </div>
               </div>
             </div>
+
             <div class="hero-card-footer">
               <div>
                 <div class="hero-card-price">TK 480 BDT</div>
                 <div>Unisex • Sizes M–XL</div>
               </div>
+
               <div class="hero-card-chip">
                 <span class="hero-chip-dot"></span>
                 <span>5% to relief orgs</span>
@@ -81,51 +157,103 @@
         </div>
       </section>
 
-      <!-- New in store -->
+      <!-- =======================================================
+           NEW IN STORE
+           - Horizontally scrollable row of your first 3 products.
+           - Each "Add to cart" button uses data-product-id so script.js
+             knows which item to add.
+         ======================================================= -->
       <section id="new-in" class="anchor">
         <div class="section-header">
           <div>
             <h2 class="section-title">New in store</h2>
             <p class="section-subtitle">
-              Fresh drops every month – limited stock only.
+              First wave of ELENORM drops – limited stock, more designs coming.
             </p>
           </div>
+
+          <!-- Secondary link to cart page -->
           <a href="cart.html" class="link-inline">View cart →</a>
         </div>
 
         <div class="product-row">
+          <!-- ===================== PRODUCT 1 ===================== -->
           <article class="product-card">
+            <!--
+              PRODUCT IMAGE 1 – FREE PALESTINE
+              --------------------------------
+              You can replace this placeholder with a real PNG/JPEG.
+
+              Example:
+                <img
+                  src="images/free-palestine-card.png"
+                  alt="FREE PALESTINE – Drop Shoulder tee on black background"
+                  class="product-img"
+                />
+
+              Make sure the file path matches where you place the image.
+            -->
             <div class="product-img">
               FREE PALESTINE – Drop Shoulder mock
             </div>
+
             <h3 class="product-title">Free Palestine Collection</h3>
-            <div class="product-meta">220+ GSM • Unisex</div>
+
+            <p class="product-meta">
+              Statement tee • 220+ GSM • Unisex
+            </p>
+
             <div class="product-foot">
-              <div class="product-price">TK 480 BDT</div>
+              <span class="product-price">TK 480 BDT</span>
+
+              <!--
+                data-product-id="free-palestine" MUST match the id in PRODUCTS
+                array inside script.js.
+              -->
               <button class="btn-mini" data-product-id="free-palestine">
                 Add to cart
               </button>
             </div>
           </article>
 
+          <!-- ===================== PRODUCT 2 ===================== -->
           <article class="product-card">
-            <div class="product-img">Spider theme graphic mock</div>
+            <!-- PRODUCT IMAGE 2 – SPIDER THEME -->
+            <div class="product-img">
+              <!-- TODO: replace with real Spider tee mockup image -->
+              Spider theme front graphic mock
+            </div>
+
             <h3 class="product-title">Spider Theme Collection</h3>
-            <div class="product-meta">TK 449 BDT • Streetwear fit</div>
+
+            <p class="product-meta">
+              Streetwear fit • Bold chest print
+            </p>
+
             <div class="product-foot">
-              <div class="product-price">TK 449 BDT</div>
+              <span class="product-price">TK 449 BDT</span>
               <button class="btn-mini" data-product-id="spider">
                 Add to cart
               </button>
             </div>
           </article>
 
+          <!-- ===================== PRODUCT 3 ===================== -->
           <article class="product-card">
-            <div class="product-img">Minimal logo tee mock</div>
+            <!-- PRODUCT IMAGE 3 – CORE LOGO -->
+            <div class="product-img">
+              <!-- TODO: replace with real core logo tee mockup -->
+              Minimal ELENORM logo tee mock
+            </div>
+
             <h3 class="product-title">Core Logo Tee</h3>
-            <div class="product-meta">Everyday essential</div>
+
+            <p class="product-meta">
+              Clean ELENORM branding • Everyday essential
+            </p>
+
             <div class="product-foot">
-              <div class="product-price">TK 420 BDT</div>
+              <span class="product-price">TK 420 BDT</span>
               <button class="btn-mini" data-product-id="core-logo">
                 Add to cart
               </button>
@@ -134,58 +262,74 @@
         </div>
       </section>
 
-      <!-- Collections -->
+      <!-- =======================================================
+           SHOP BY COLLECTION
+           - These tiles are more about navigation and storytelling.
+           - When you create real collection pages later, you can
+             change the <span> labels into links.
+         ======================================================= -->
       <section id="collections">
         <div class="section-header">
           <div>
             <h2 class="section-title">Shop by collection</h2>
             <p class="section-subtitle">
-              Find the drop that fits your mood today.
+              Build your rotation with statements, characters, and clean basics.
             </p>
           </div>
         </div>
 
         <div class="collection-grid">
+          <!-- STATEMENT TEES -->
           <article class="collection-tile">
             <h3 class="collection-title">Statement Tees</h3>
             <p class="collection-meta">
-              Free Palestine and more designs that speak up.
+              Cause‑driven graphics like the Free Palestine drop and future
+              activism‑themed capsules.
             </p>
-            <span class="collection-label">Coming soon</span>
+            <span class="collection-label">Live now</span>
           </article>
 
+          <!-- CHARACTER & ANIME -->
           <article class="collection-tile">
             <h3 class="collection-title">Character & Anime</h3>
             <p class="collection-meta">
-              Fan art–inspired pieces for your inner geek.
+              High‑energy designs for fans of comics, anime, and games. Great
+              for events, cons, and everyday fits.
             </p>
-            <span class="collection-label">Coming soon</span>
+            <span class="collection-label">Launching soon</span>
           </article>
 
+          <!-- MINIMAL BASICS -->
           <article class="collection-tile">
             <h3 class="collection-title">Minimal Basics</h3>
             <p class="collection-meta">
-              Clean logo tees for daily rotation.
+              Simple logo‑focused tees tuned for daily wear. Subtle but still
+              clearly ELENORM.
             </p>
-            <span class="collection-label">Coming soon</span>
+            <span class="collection-label">Launching soon</span>
           </article>
 
+          <!-- CUSTOM DESIGN -->
           <article class="collection-tile">
             <h3 class="collection-title">Custom Design</h3>
             <p class="collection-meta">
-              Print your own art or message on our blanks.
+              Bring your own artwork or idea and have ELENORM print it on the
+              same premium blanks used for all drops.
             </p>
             <span class="collection-label">Use custom tee</span>
           </article>
         </div>
       </section>
 
-      <!-- Impact -->
+      <!-- =======================================================
+           TEES WITH IMPACT
+           - Explains your 5% donation, fabric quality, and delivery.
+         ======================================================= -->
       <section>
         <div class="impact">
-          <div class="section-header" style="margin-bottom: 6px">
+          <div class="section-header" style="margin-bottom:6px;">
             <div>
-              <h2 class="section-title" style="font-size: 18px">
+              <h2 class="section-title" style="font-size:18px;">
                 Tees with impact
               </h2>
               <p class="section-subtitle">
@@ -195,88 +339,119 @@
           </div>
 
           <div class="impact-row">
+            <!-- Impact item 1 -->
             <div class="impact-item">
               <div class="impact-icon">%</div>
               <div>
-                <div class="impact-label">5% donated</div>
+                <p class="impact-label">5% donated</p>
                 <p class="impact-text">
-                  Selected drops support verified Palestinian and global relief
-                  efforts.
+                  Selected drops contribute 5% towards Palestinian and global
+                  relief initiatives through trusted partners.
                 </p>
               </div>
             </div>
+
+            <!-- Impact item 2 -->
             <div class="impact-item">
               <div class="impact-icon">🧵</div>
               <div>
-                <div class="impact-label">Premium fabric</div>
+                <p class="impact-label">Premium fabric</p>
                 <p class="impact-text">
-                  220+ GSM cotton, soft handfeel, and durable neck ribbing.
+                  220+ GSM cotton with a soft handfeel, clean neck ribbing, and
+                  a fit tuned for both comfort and structure.
                 </p>
               </div>
             </div>
+
+            <!-- Impact item 3 -->
             <div class="impact-item">
               <div class="impact-icon">🚚</div>
               <div>
-                <div class="impact-label">Nationwide delivery</div>
+                <p class="impact-label">Nationwide delivery</p>
                 <p class="impact-text">
-                  Fast shipping across Bangladesh with simple tracking.
+                  Orders ship across Bangladesh using reliable partners, with
+                  a simple cart and checkout experience.
                 </p>
               </div>
             </div>
           </div>
 
-          <p
-            style="
-              font-size: 12px;
-              margin-top: 12px;
-              color: #555;
-              max-width: 36rem;
-            "
-          >
+          <!-- Short brand story -->
+          <p style="font-size:12px;margin-top:12px;color:#555;max-width:36rem;">
             ELENORM is a Dhaka‑based streetwear label turning statements into
-            everyday outfits for people who want their clothes to mean
-            something.
+            everyday outfits for people who want their clothes to carry meaning,
+            not just logos.
           </p>
         </div>
       </section>
 
-      <!-- Custom CTA -->
+      <!-- =======================================================
+           CUSTOM PRINT STUDIO
+           - Promotes the custom product.
+           - Button adds the "custom" product to cart.
+         ======================================================= -->
       <section id="custom" class="anchor">
         <div class="custom-cta">
           <div>
             <div class="custom-pill">
-              <span>Custom print studio</span>
+              <span>CUSTOM PRINT STUDIO</span>
             </div>
+
             <h2 class="custom-title">Design your own tee.</h2>
+
             <p class="custom-text">
               Upload artwork, share a link, or send text – ELENORM prints it on
-              premium 220+ GSM cotton with the same fit as your favourite drops.
+              220+ GSM cotton with the same fit and quality as your favourite
+              drops.
             </p>
+
+            <!--
+              data-product-id="custom" links to the "custom" product in
+              the PRODUCTS array in script.js. You can edit that product’s
+              price, name, and description there.
+            -->
             <button class="btn-outline" data-product-id="custom">
               Add custom tee to cart →
             </button>
           </div>
+
+          <!-- Right side placeholder for future custom UI / image -->
           <div class="custom-sketch">
-            Drag your design here (concept only). In your real store this will
-            link to a detailed custom‑order page.
+            <!--
+              TODO: Replace this area with a custom upload/design preview
+              once you build a more advanced custom‑order page.
+
+              For now it just visually hints that customers will send a design.
+            -->
+            Drag your design here (concept only). In your future store, this
+            will link to a detailed custom‑order page where customers can paste
+            a design link or upload a file.
           </div>
         </div>
       </section>
 
-      <!-- Social proof -->
+      <!-- =======================================================
+           SOCIAL PROOF / RATING
+         ======================================================= -->
       <section>
         <div class="social-proof">
           <div class="score">
             <span class="stars">★★★★★</span>
             <span>4.9 / 5 from 200+ orders</span>
           </div>
-          <div>Trusted by students & creatives nationwide.</div>
+          <div>Trusted by students & creatives across Bangladesh.</div>
         </div>
       </section>
     </main>
 
+    <!-- =========================================================
+         FOOTER
+       ========================================================= -->
     <footer>
-      <div>© <span id="year"></span> ELENORM. All rights reserved.</div>
+      <div>
+        © <span id="year"></span> ELENORM. All rights reserved.
+      </div>
+
       <nav class="footer-links">
         <a href="#new-in">Store</a>
         <a href="#collections">Collections</a>
@@ -286,8 +461,14 @@
     </footer>
   </div>
 
+  <!-- ===========================================================
+       SCRIPTS
+       - script.js handles cart logic, smooth scrolling, and checkout.
+       - The small inline script just updates the year automatically.
+     =========================================================== -->
   <script src="script.js"></script>
   <script>
+    // Auto‑update copyright year
     document.getElementById("year").textContent =
       new Date().getFullYear().toString();
   </script>
