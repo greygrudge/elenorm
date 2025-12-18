@@ -1,45 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Store – ELENORM</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELENORM – Wear Your Voice</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="logo">ELENORM</div>
+      <div class="nav-icons">
+        <button class="nav-icon" onclick="location.href='cart.html'">
+          🛒 <span data-cart-count style="font-size:11px;margin-left:2px;">0</span>
+        </button>
+      </div>
+    </header>
 
-<header>
-    <div class="logo">ELENORM</div>
-    <a href="cart.html" class="btn">CART</a>
-</header>
-
-<div class="container">
-    <h2>Products</h2>
-
-    <div class="products">
-
-        <div class="product-card">
-            <img src="https://via.placeholder.com/400x400" alt="">
-            <p class="product-name">Black Oversized Tee</p>
-            <p class="price">$14</p>
-            <button class="btn"
-                onclick="addToCart({name:'Black Oversized Tee', price:14})">
-                ADD TO CART
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <div class="hero-copy-eyebrow">
+            <span class="hero-pill-dot">%</span>
+            <span>5% donated drops</span>
+          </div>
+          <h1 class="hero-title">Wear your voice.</h1>
+          <p class="hero-subtitle">
+            Premium 220+ GSM graphic tees made in Bangladesh, designed to stand
+            with the causes and stories that matter.
+          </p>
+          <div class="hero-cta-row">
+            <button class="btn-primary" data-scroll="new-in">
+              <span>Shop new drops</span> →
             </button>
+            <div class="hero-cta-secondary">
+              or <a href="#custom" style="text-decoration: underline">design your own</a>
+            </div>
+          </div>
+          <div class="hero-tag-row">
+            <div class="pill">
+              <span class="pill-dot"></span> 220+ GSM premium cotton
+            </div>
+            <div class="pill">Nationwide delivery across Bangladesh</div>
+            <div class="pill">Made to order, less waste</div>
+          </div>
         </div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/400x400" alt="">
-            <p class="product-name">White Premium Tee</p>
-            <p class="price">$12</p>
-            <button class="btn"
-                onclick="addToCart({name:'White Premium Tee', price:12})">
-                ADD TO CART
-            </button>
+        <div class="hero-visual-wrapper">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>Featured drop</span>
+              <span class="hero-card-tag">Free Palestine tee</span>
+            </div>
+            <div class="hero-tshirt">
+              <div class="hero-tshirt-main">
+                <div class="hero-tshirt-illustration">
+                  FREE PALESTINE – Drop Shoulder Collection<br />
+                  (replace with product image later)
+                </div>
+                <div class="hero-flag-bar">
+                  <div class="flag-swatches">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span>Stand in solidarity</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-card-footer">
+              <div>
+                <div class="hero-card-price">TK 480 BDT</div>
+                <div>Unisex • Sizes M–XL</div>
+              </div>
+              <div class="hero-card-chip">
+                <span class="hero-chip-dot"></span>
+                <span>5% to relief orgs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New in store -->
+      <section id="new-in" class="anchor">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">New in store</h2>
+            <p class="section-subtitle">
+              Fresh drops every month – limited stock only.
+            </p>
+          </div>
+          <a href="cart.html" class="link-inline">View cart →</a>
         </div>
 
-    </div>
+        <div class="product-row">
+          <article class="product-card">
+            <div class="product-img">
+              FREE PALESTINE – Drop Shoulder mock
+            </div>
+            <h3 class="product-title">Free Palestine Collection</h3>
+            <div class="product-meta">220+ GSM • Unisex</div>
+            <div class="product-foot">
+              <div class="product-price">TK 480 BDT</div>
+              <button class="btn-mini" data-product-id="free-palestine">
+                Add to cart
+              </button>
+            </div>
+          </article>
 
-</div>
+          <article class="product-card">
+            <div class="product-img">Spider theme graphic mock</div>
+            <h3 class="product-title">Spider Theme Collection</h3>
+            <div class="product-meta">TK 449 BDT • Streetwear fit</div>
+            <div class="product-foot">
+              <div class="product-price">TK 449 BDT</div>
+              <button class="btn-mini" data-product-id="spider">
+                Add to cart
+              </button>
+            </div>
+          </article>
 
-<script src="script.js"></script>
+          <article class="product-card">
+            <div class="product-img">Minimal logo tee mock</div>
+            <h3 class="product-title">Core Logo Tee</h3>
+            <div class="product-meta">Everyday essential</div>
+            <div class="product-foot">
+              <div class="product-price">TK 420 BDT</div>
+              <button class="btn-mini" data-product-id="core-logo">
+                Add to cart
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Collections -->
+      <section id="collections">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Shop by collection</h2>
+            <p class="section-subtitle">
+              Find the drop that fits your mood today.
+            </p>
+          </div>
+        </div>
+
+        <div class="collection-grid">
+          <article class="collection-tile">
+            <h3 class="collection-title">Statement Tees</h3>
+            <p class="collection-meta">
+              Free Palestine and more designs that speak up.
+            </p>
+            <span class="collection-label">Coming soon</span>
+          </article>
+
+          <article class="collection-tile">
+            <h3 class="collection-title">Character & Anime</h3>
+            <p class="collection-meta">
+              Fan art–inspired pieces for your inner geek.
+            </p>
+            <span class="collection-label">Coming soon</span>
+          </article>
+
+          <article class="collection-tile">
+            <h3 class="collection-title">Minimal Basics</h3>
+            <p class="collection-meta">
+              Clean logo tees for daily rotation.
+            </p>
+            <span class="collection-label">Coming soon</span>
+          </article>
+
+          <article class="collection-tile">
+            <h3 class="collection-title">Custom Design</h3>
+            <p class="collection-meta">
+              Print your own art or message on our blanks.
+            </p>
+            <span class="collection-label">Use custom tee</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- Impact -->
+      <section>
+        <div class="impact">
+          <div class="section-header" style="margin-bottom: 6px">
+            <div>
+              <h2 class="section-title" style="font-size: 18px">
+                Tees with impact
+              </h2>
+              <p class="section-subtitle">
+                Built to last, designed to give back.
+              </p>
+            </div>
+          </div>
+
+          <div class="impact-row">
+            <div class="impact-item">
+              <div class="impact-icon">%</div>
+              <div>
+                <div class="impact-label">5% donated</div>
+                <p class="impact-text">
+                  Selected drops support verified Palestinian and global relief
+                  efforts.
+                </p>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">🧵</div>
+              <div>
+                <div class="impact-label">Premium fabric</div>
+                <p class="impact-text">
+                  220+ GSM cotton, soft handfeel, and durable neck ribbing.
+                </p>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">🚚</div>
+              <div>
+                <div class="impact-label">Nationwide delivery</div>
+                <p class="impact-text">
+                  Fast shipping across Bangladesh with simple tracking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p
+            style="
+              font-size: 12px;
+              margin-top: 12px;
+              color: #555;
+              max-width: 36rem;
+            "
+          >
+            ELENORM is a Dhaka‑based streetwear label turning statements into
+            everyday outfits for people who want their clothes to mean
+            something.
+          </p>
+        </div>
+      </section>
+
+      <!-- Custom CTA -->
+      <section id="custom" class="anchor">
+        <div class="custom-cta">
+          <div>
+            <div class="custom-pill">
+              <span>Custom print studio</span>
+            </div>
+            <h2 class="custom-title">Design your own tee.</h2>
+            <p class="custom-text">
+              Upload artwork, share a link, or send text – ELENORM prints it on
+              premium 220+ GSM cotton with the same fit as your favourite drops.
+            </p>
+            <button class="btn-outline" data-product-id="custom">
+              Add custom tee to cart →
+            </button>
+          </div>
+          <div class="custom-sketch">
+            Drag your design here (concept only). In your real store this will
+            link to a detailed custom‑order page.
+          </div>
+        </div>
+      </section>
+
+      <!-- Social proof -->
+      <section>
+        <div class="social-proof">
+          <div class="score">
+            <span class="stars">★★★★★</span>
+            <span>4.9 / 5 from 200+ orders</span>
+          </div>
+          <div>Trusted by students & creatives nationwide.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> ELENORM. All rights reserved.</div>
+      <nav class="footer-links">
+        <a href="#new-in">Store</a>
+        <a href="#collections">Collections</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
 </body>
 </html>
