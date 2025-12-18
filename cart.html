@@ -1,27 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cart – ELENORM</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart – ELENORM</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+        ELENORM
+      </div>
+      <div class="nav-icons">
+        <button class="nav-icon" onclick="location.href='index.html'">🏠</button>
+        <button class="nav-icon" onclick="location.href='cart.html'">
+          🛒 <span data-cart-count style="font-size:11px;margin-left:2px;">0</span>
+        </button>
+      </div>
+    </header>
 
-<header>
-    <div class="logo">ELENORM</div>
-    <a href="checkout.html" class="btn">CHECKOUT</a>
-</header>
+    <main>
+      <section>
+        <div class="section-header">
+          <div>
+            <h1 class="section-title">Your cart</h1>
+            <p class="section-subtitle">
+              Review your items before checking out.
+            </p>
+          </div>
+          <a href="checkout.html" class="link-inline">Go to checkout →</a>
+        </div>
 
-<div class="container">
-    <h2>Your Cart</h2>
+        <p id="cart-empty" class="muted" style="margin-top:6px;">
+          Your cart is empty. Add some tees from the home page.
+        </p>
 
-    <div id="cart-items"></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th class="text-right">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-body"></tbody>
+        </table>
 
-    <h3>Total: <span id="total">$0</span></h3>
-</div>
+        <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+          <button class="btn-outline" onclick="clearCart()">Empty cart</button>
+          <div>
+            <span class="muted">Subtotal:</span>
+            <strong id="cart-subtotal">0 BDT</strong>
+          </div>
+        </div>
 
-<script src="script.js"></script>
-<script>
-    loadCart();
-</script>
+        <div style="margin-top:14px;display:flex;gap:10px;">
+          <button class="btn-outline" onclick="location.href='index.html'">
+            ← Continue shopping
+          </button>
+          <button class="btn-primary" onclick="location.href='checkout.html'">
+            Checkout →
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> ELENORM.</div>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
 </body>
 </html>
