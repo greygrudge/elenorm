@@ -1,32 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Checkout – ELENORM</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout – ELENORM</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+        ELENORM
+      </div>
+      <div class="nav-icons">
+        <button class="nav-icon" onclick="location.href='cart.html'">
+          🛒 <span data-cart-count style="font-size:11px;margin-left:2px;">0</span>
+        </button>
+      </div>
+    </header>
 
-<header>
-    <div class="logo">ELENORM</div>
-</header>
+    <main>
+      <section>
+        <div class="section-header">
+          <div>
+            <h1 class="section-title">Checkout</h1>
+            <p class="section-subtitle">
+              This is a demo checkout. Connect to a payment gateway later.
+            </p>
+          </div>
+        </div>
 
-<div class="container">
-    <h2>Checkout</h2>
+        <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:18px;">
+          <!-- Form -->
+          <form id="checkout-form">
+            <h2 style="font-size:16px;margin-bottom:6px;">Shipping details</h2>
 
-    <form onsubmit="checkout(); return false;">
-        <label>Name</label><br>
-        <input type="text" required><br><br>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
+              <div>
+                <label style="font-size:12px;">First name</label>
+                <input required name="firstName" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;" />
+              </div>
+              <div>
+                <label style="font-size:12px;">Last name</label>
+                <input required name="lastName" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;" />
+              </div>
+            </div>
 
-        <label>Phone</label><br>
-        <input type="text" required><br><br>
+            <div style="margin-top:8px;">
+              <label style="font-size:12px;">Email</label>
+              <input type="email" required name="email" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;" />
+            </div>
 
-        <label>Address</label><br>
-        <textarea required></textarea><br><br>
+            <div style="margin-top:8px;">
+              <label style="font-size:12px;">Phone</label>
+              <input required name="phone" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;" />
+            </div>
 
-        <button class="btn" type="submit">PLACE ORDER</button>
-    </form>
-</div>
+            <div style="margin-top:8px;">
+              <label style="font-size:12px;">Address</label>
+              <textarea required name="address" rows="3" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;"></textarea>
+            </div>
 
-<script src="script.js"></script>
+            <div style="margin-top:8px;">
+              <label style="font-size:12px;">City</label>
+              <input required name="city" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;" />
+            </div>
+
+            <div style="margin-top:8px;">
+              <label style="font-size:12px;">Delivery notes (optional)</label>
+              <textarea name="notes" rows="2" style="width:100%;padding:8px;margin-top:2px;border-radius:8px;border:1px solid #e5e5e5;"></textarea>
+            </div>
+
+            <p class="muted" style="margin-top:10px;">
+              Payment is not connected yet. You can replace this form submit
+              with your gateway (SSLCommerz, Stripe, bKash, etc.) later.
+            </p>
+
+            <button type="submit" class="btn-primary" style="margin-top:10px;">
+              Place demo order →
+            </button>
+          </form>
+
+          <!-- Summary -->
+          <aside style="border-radius:18px;border:1px solid #e5e5e5;padding:12px 12px 14px;background:#f9fafb;">
+            <h2 style="font-size:16px;margin-bottom:6px;">Order summary</h2>
+            <div id="checkout-list" class="muted" style="font-size:13px;"></div>
+            <hr style="margin:10px 0;border:none;border-top:1px solid #e5e5e5;" />
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="muted">Total (approx)</span>
+              <strong id="checkout-total">0 BDT</strong>
+            </div>
+            <p class="muted" style="margin-top:8px;font-size:11px;">
+              Shipping fee and final total may vary when you integrate a real
+              payment / delivery provider.
+            </p>
+          </aside>
+        </div>
+
+        <div style="margin-top:14px;">
+          <button class="btn-outline" onclick="location.href='cart.html'">
+            ← Back to cart
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> ELENORM.</div>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
 </body>
 </html>
